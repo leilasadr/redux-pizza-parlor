@@ -4,6 +4,9 @@ import './App.css';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
+import PizzaItem from '../PizzaItem/PizzaItem';
+import PizzaList from '../PizzaList/PizzaList';
+
 
 function App() {
 
@@ -38,10 +41,10 @@ function App() {
       <header className='App-header'>
         <h1 className='App-title'>Prime Pizza</h1>
       </header>
-  
+
       <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p>
-  
+      <PizzaList />
     </div>
   );
 }
