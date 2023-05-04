@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import PizzaItem from '../PizzaItem/PizzaItem';
 import PizzaList from '../PizzaList/PizzaList';
+import { HashRouter as Router, Route, Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 
 function App() {
@@ -38,13 +39,27 @@ function App() {
 
   return (
     <div className='App'>
+
       <header className='App-header'>
         <h1 className='App-title'>Prime Pizza</h1>
       </header>
+      <Router>
 
-      <img src='images/pizza_photo.png' />
-      <p>Pizza is great.</p>
-      <PizzaList />
+        <Route exact path="/">
+          <PizzaList />
+          <Link to="/customer-info">Customer Info</Link>
+        </Route>
+
+        <Route exact path="/customer-info">
+          <div>
+            <p>I WAS JUST GOING TO SAY...</p>
+          </div>
+        </Route>
+
+
+      
+
+      </Router>
     </div>
   );
 }
