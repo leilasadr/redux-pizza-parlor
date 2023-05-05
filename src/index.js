@@ -15,13 +15,21 @@ const pizzas = (state = [], action) => {
         return pizzaArray;
     }
     return state;
+};
 
+const cart = (state = [], action) => {
+    if(action.type === 'ADD_TO_CART') {
+        console.log('ADD TO CART Data:', action.payload);
+        return [...state, action.payload];
+    }
+    return state;
 };
 
 // Store
 const theStore = createStore(
     combineReducers({
-        pizzas
+        pizzas,
+        cart
     }),
     applyMiddleware(
         logger

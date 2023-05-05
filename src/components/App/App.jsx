@@ -37,6 +37,19 @@ function App() {
   const pizzas = useSelector((store) => store.pizzas);
   console.log('Pizza from Store:', pizzas);
 
+  const cart = useSelector((store) => store.cart);
+  
+  useEffect(() => {
+    console.log('CART REDUCER WORKS!', cart);
+  }, []);
+
+  useEffect(() => {
+    dispatch({type: 'ADD_TO_CART',
+  payload: 7});
+  }, []);
+
+
+
   return (
     <div className='App'>
 
