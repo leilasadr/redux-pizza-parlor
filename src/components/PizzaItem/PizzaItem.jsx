@@ -2,7 +2,7 @@ import { useState } from "react";
 
 function PizzaItem({ pizza: casserole }) {
     return (
-        <>
+        <div>
         <img src={casserole.image_path}/>
         <h3>{casserole.name}</h3>
         <h5>{casserole.description}</h5>
@@ -10,7 +10,7 @@ function PizzaItem({ pizza: casserole }) {
         <button>
             Add
         </button>
-        </>
+        </div>
     );
 }
 
